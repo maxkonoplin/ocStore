@@ -69,6 +69,10 @@ class ControllerMarketplaceModification extends Controller {
 		// Fix Theme Editor
 
 			$this->model_setting_setting->editSettingValue('config', 'config_maintenance', true);
+			
+			if (file_exists(DIR_LOGS . 'ocmod.log')) {
+				unlink(DIR_LOGS . 'ocmod.log');
+			}
 
 			//Log
 			$log = array();
